@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Date;
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main
 {
@@ -17,18 +17,15 @@ public class Main
 
   public static boolean isCorrectSequence(String[] userSequence, String[] sequence)
   {
-    for(int i = 1; i <= userSequence.length; i++)
+    if(Arrays.equals(userSequence, sequence))
     {
-      if(userSequence[i].equals(sequence[i]))
-      {
         return true;
-      }
-      else
-      {
-        return false;
-      }
     }
-    return false;
+
+    else
+    {
+        return false;
+    }
   }
 
   public static String random()
@@ -87,11 +84,17 @@ public class Main
   {
     int lives = 5;
     int score = 0;
-    int milliseconds = 1000;
+    int milliseconds = 2000;
 
     while(lives > 0)
     {
       String[] sequence = sequence(milliseconds);
+      System.out.println();
+      System.out.println();
+      System.out.println();
+      System.out.println();
+      System.out.println();
+      System.out.println();
 
 
       System.out.println("1st Color? ");
@@ -116,8 +119,8 @@ public class Main
         correct();
         score += 5;
         System.out.println("Lives: " + lives + "      Score: " + score);
-        
-        
+
+
       }
       else
       {
